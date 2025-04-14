@@ -49,8 +49,7 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 35px;
-    background-color: #D0D0D0;
-    box-shadow: 10px 16px 0px 0px #737373;
+    text-decoration: none;
 }
 
 .container_name{
@@ -66,15 +65,24 @@ body{
 }
   
 
+
 /* ----------- Container Status ----------- */
+.neutral_container{
+    background-color: #D0D0D0;
+    box-shadow: 10px 16px 0px 0px #737373;
+    cursor: not-allowed;
+}
+
 
 .current_container{
     background-color: var(--bg-current-container);
     box-shadow: 10px 16px 0px 0px var(--drop-shadow-current-container);
     color: #FFCFCF;
     cursor: pointer;
-
+ 
 }
+
+
 
 .current_container .container_name{
     color: var(--font-color-current-container);
@@ -84,9 +92,10 @@ body{
     background-color: var(--bg-checked-container);
     box-shadow: 10px 16px 0px 0px var(--drop-shadow-checked-container);
     color : var(--font-color-checked-container);
-    cursor: forbidden;
+    cursor: not-allowed;
 }
 
 .checked_container .container_name{
     color: var(--font-color-checked-container);
 }
+
