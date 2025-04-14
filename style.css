@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root{
+    /* -------------- COLORS ---------- */
+    --bg-color: #e4e2dd;
+    
+    --bg-current-container: #FF8F8F;
+    --drop-shadow-current-container: #B84E4E;
+    --font-color-current-container: #FFCFCF;
+
+    --bg-checked-container: #59D46F;
+    --drop-shadow-checked-container: #2E743B;
+    --font-color-checked-container: #CAFFD4;
+
+
+
+    /* -------------- FONTS ---------- */
+    --main-font: 'Quicksand', sans-serif;
+    --font-color-primary: #e89b9b;
+    --font-color-secondary: #A9A9A9;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--main-font);
+    color: var(--font-color-primary);
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    font-size: 40px;
+}
+
+
+.roadmap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    padding: 100px 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    background-color: #D0D0D0;
+    box-shadow: 10px 16px 0px 0px #737373;
+}
+
+.container_name{
+    padding: 24px 50px;
+    color: var(--font-color-secondary);
+    font-size: 50pt;
+}
+
+.arrow {
+    width: 5px;
+    height: 161px;
+    background-color: var(--font-color-secondary);
+}
+  
+
+/* ----------- Container Status ----------- */
+
+.current_container{
+    background-color: var(--bg-current-container);
+    box-shadow: 10px 16px 0px 0px var(--drop-shadow-current-container);
+    color: #FFCFCF;
+    cursor: pointer;
+
+}
+
+.current_container .container_name{
+    color: var(--font-color-current-container);
+}
+
+.checked_container{
+    background-color: var(--bg-checked-container);
+    box-shadow: 10px 16px 0px 0px var(--drop-shadow-checked-container);
+    color : var(--font-color-checked-container);
+    cursor: forbidden;
+}
+
+.checked_container .container_name{
+    color: var(--font-color-checked-container);
+}
