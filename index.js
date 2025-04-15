@@ -11,13 +11,14 @@ let correctCards = {
     "communication": [4, 5, 6],
 }
 
-if(localStorage.getItem("money") === null) {
-    localStorage.setItem("money", "20000");
-}
-let money = parseInt(localStorage.getItem("money"));
-
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.includes("index.html")) {
+        if(localStorage.getItem("money") === null) {
+            localStorage.setItem("money", "20000");
+        }
+        let money = parseInt(localStorage.getItem("money"));   
+    }
     if (window.location.pathname.includes("assemblage.html")) {
         // Ton script ici
         document.getElementById("money-span").innerHTML = "💵 " + money + "€";
