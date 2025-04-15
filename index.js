@@ -11,19 +11,18 @@ let correctCards = {
     "communication": [4, 5, 6],
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    
     if (window.location.pathname.includes("assemblage.html")) {
         // Ton script ici
+        document.getElementById("money-span").innerHTML = localStorage.getItem("money") + " €";
+
         const params = new URLSearchParams(window.location.search);
         let currentStep = params.get("currentStep");
-        console.log(currentStep);
-
+        console.log(currentStep);document.getElementById("assemblage-h1-span").innerHTML = currentStep;
 
         cards.forEach(card => {
             card.addEventListener('click', () => {
+        
                 const id = card.dataset.cardId;
         
                 if (selectedCards.includes(id)) {
@@ -44,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
         chassisValidateBtn.addEventListener('click', () => {
             const correctAnswers = correctCards[currentStep].map(String); 
             var nbValideCards = 0
+
+            localStorage.setItem("money", localStorage.getItem("money") - 1000);
+            document.getElementById("money-span").innerHTML = localStorage.getItem("money") + " €";
+
             console.log(correctAnswers, selectedCards)
             selectedCards.forEach(id => {
                 const card = document.querySelector(`[data-card-id="${id}"]`);
@@ -69,7 +72,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.location.pathname.includes("mission.html")) {
         
-                // Sélectionner tous les liens
+
+        if (localStorage.getItem("money") === null) {
+            localStorage.setItem("money", 20000);
+        }
+
+        if (localStorage.getItem("startTime") === null) {
+            localStorage.setItem("startTime", Date.now());
+        }
+        
+        document.getElementById("money-span").innerHTML = localStorage.getItem("money") + " €";
+            // Sélectionner tous les liens
         const links = document.querySelectorAll('a');
 
         // Ajouter un gestionnaire d'événements à chaque lien
@@ -83,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-        
+    
         const params = new URLSearchParams(window.location.search);
         let validateStep = params.get("validateStep")
         
@@ -148,6 +161,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.href = "../pages/fin.html"; 
                 break;
         }
+    }
+
+    if (window.location.pathname.includes("pages/fin.html")){
+        
+        document.getElementById("money-span").innerHTML = (20000 - localStorage.getItem("money")) + " €";
+        const startTime = parseInt(localStorage.getItem("startTime"));
+        const endTime = Date.now();
+        const totalTimeMs = endTime - startTime;
+    
+        const totalSeconds = Math.floor(totalTimeMs / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        document.getElementById("time-span").innerHTML = minutes + "' " + seconds + "''";  
     }
 
 });

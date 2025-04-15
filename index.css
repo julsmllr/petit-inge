@@ -107,10 +107,10 @@ body{
 
 .money_pillule{
     position: absolute;
-    top: 150px;
-    right: 50px;
+    top: 175px;
+    right: 25px;
     background: var(--bg-checked-container);
-    border-radius: 50px;
+    border-radius: 20px;
     padding: 20px 50px;
     box-shadow: 5px 5px 0px 0px var(--drop-shadow-checked-container);
     cursor: pointer;
@@ -118,7 +118,8 @@ body{
 
 .money_pillule .money_span{
     color: var(--bg-color);
-    font-size: 28pt;
+    font-size: 18pt;
+    font-weight: 700;
 }
 
 /* ------------ CHASSIS */
@@ -131,7 +132,10 @@ body{
     text-align: center;
     color: #F66B0E;
     font-size: 50pt;
+
 }
+
+
 
 .chassis-body button{
     font-family: var(--main-font);
@@ -331,6 +335,7 @@ body{
     .chassis-card svg {
         width: 80px;
     }
+
 }
 
 /* Écrans ≤ 480px : smartphones */
