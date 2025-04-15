@@ -11,6 +11,10 @@ let correctCards = {
     "communication": [4, 5, 6],
 }
 
+if(localStorage.getItem("money") === null) {
+    localStorage.setItem("money", "20000");
+}
+let money = parseInt(localStorage.getItem("money"));
 
 
 document.addEventListener("DOMContentLoaded", () => {
