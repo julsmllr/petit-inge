@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root{
+    /* -------------- COLORS ---------- */
+    --bg-color: #EFEFEF;
+    
+    --bg-current-container: #205375;
+    --drop-shadow-current-container: #112B3C;
+    --font-color-current-container: #EFEFEF;
+
+    --bg-checked-container: #F66B0E;
+    --drop-shadow-checked-container: #AF4803;
+    --font-color-checked-container: #EFEFEF;
+
+
+
+    /* -------------- FONTS ---------- */
+    --main-font: 'Quicksand', sans-serif;
+    --font-color-primary: #205375;
+    --font-color-secondary: #ADADAD;
+}
+
+
+
+
+
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--main-font);
+    color: var(--font-color-primary);
+    overflow-x: visible;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    font-size: 40px;
+}
+
+/* ----------------- MISSION ----------------- */
+.roadmap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    padding: 100px 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    text-decoration: none;
+}
+
+.container_name{
+    padding: 24px 50px;
+    color: var(--font-color-secondary);
+    font-size: 50pt;
+}
+
+.arrow {
+    width: 5px;
+    height: 161px;
+    background-color: var(--font-color-secondary);
+}
+  
+
+
+/* ----------- Container Status ----------- */
+.neutral_container{
+    background-color: #EFEFEF;
+    box-shadow: 10px 16px 0px 0px #ADADAD;
+    cursor: not-allowed;
+}
+
+
+.current_container{
+    background-color: var(--bg-current-container);
+    box-shadow: 10px 16px 0px 0px var(--drop-shadow-current-container);
+    color: #EFEFEF;
+    cursor: pointer;
+ 
+}
+
+
+
+.current_container .container_name{
+    color: var(--font-color-current-container);
+}
+
+.checked_container{
+    background-color: var(--bg-checked-container);
+    box-shadow: 10px 16px 0px 0px var(--drop-shadow-checked-container);
+    color : var(--font-color-checked-container);
+    cursor: not-allowed;
+}
+
+.checked_container .container_name{
+    color: var(--font-color-checked-container);
+}
+
+
+/* ------------ CHASSIS */
+
+.chassis-body{
+    background-color: #FFFFFF;
+}
+
+.chassis-selection-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.chassis-card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.chassis-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 20px 10px;
+    background-color: #EFEFEF;
+    box-shadow: 5px 10px 0 0 #ADADAD;
+}
+
+.chassis-card img{
+    width: 50px;
+}
+
+.chassis-card svg {
+    width: 150px;
+    color: var(--bg-current-container);
+}
+
+.chassis-card.selected {
+    background-color: var(--bg-current-container);
+    box-shadow: 10px 16px 0 0 var(--drop-shadow-current-container);
+}
+
+.chassis-card.selected svg {
+    color: var(--bg-checked-container);
+}
+
+
+.chassis-card.checked{
+    background-color: var(--bg-checked-container);
+    box-shadow: 10px 16px 0 0 var(--drop-shadow-checked-container);
+}
+
+.chassis-card.checked svg {
+    color: var(--font-color-checked-container);
+}
+
+
+#chassis-validateBtn {
+    font-family: var(--main-font);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--bg-checked-container);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#chassis-validateBtn:hover {
+    box-shadow: 5px 8px 0 0 var(--drop-shadow-checked-container);
+}
+
+#chassis-validateBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Écrans ≤ 1024px : taille intermédiaire */
+@media (max-width: 1024px) {
+    .container_name {
+        font-size: 32pt;
+        padding: 20px 40px;
+    }
+
+    .arrow {
+        height: 100px;
+    }
+
+    .header {
+        font-size: 32px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .chassis-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .chassis-card svg {
+        width: 100px;
+    }
+}
+
+/* Écrans ≤ 768px : tablettes et petits laptops */
+@media (max-width: 768px) {
+    .roadmap {
+        gap: 20px;
+        padding: 60px 0;
+    }
+
+    .container_name {
+        font-size: 24pt;
+        padding: 16px 32px;
+    }
+
+    .arrow {
+        height: 40px;
+        width: 4px;
+    }
+
+    .header {
+        font-size: 28px;
+        padding: 15px;
+    }
+
+    .chassis-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .chassis-card svg {
+        width: 80px;
+    }
+}
+
+/* Écrans ≤ 480px : smartphones */
+@media (max-width: 480px) {
+    .container_name {
+        font-size: 18pt;
+        padding: 12px 24px;
+    }
+
+    .header {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .arrow {
+        height: 30px;
+        width: 3px;
+    }
+
+    .chassis-card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .chassis-card svg {
+        width: 60px;
+    }
+
+    #chassis-validateBtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

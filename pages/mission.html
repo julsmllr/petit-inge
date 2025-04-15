@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Ptit Ingé</title>
-    <link rel="stylesheet" href="/mission.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
     <div class="header">
@@ -12,37 +12,38 @@
     </div>
 
     <div class="roadmap">
-        <a class="container current_container" href="/pages/chassis/chassis.html">
+        <a class="container current_container" href="chassis/assemblage.html?currentStep=chassis" id="chassis-card">
             <span class="container_name">Châssis</span>
         </a>
 
         <span class="arrow"></span>
 
-        <div class="container neutral_container">
+        <a class="container neutral_container disabled" href="chassis/assemblage.html?currentStep=moteur" id="moteur-card">
             <span class="container_name">Moteur</span>
-        </div>
+        </a>
 
         <span class="arrow"></span>
 
-        <div class="container neutral_container">
+        <a class="container neutral_container disabled" href="chassis/assemblage.html?currentStep=securite" id="securite-card">
             <span class="container_name">Sécurité</span>
-        </div>
+        </a>
 
         <span class="arrow"></span>
 
-        <div class="container neutral_container">
+        <a class="container neutral_container disabled" href="chassis/assemblage.html?currentStep=controlPanel" id="controlPanel-card">
             <span class="container_name">Tableau de contrôle</span>
-        </div>
+        </a>
 
         <span class="arrow"></span>
 
-        <div class="container neutral_container">
+        <a class="container neutral_container disabled" href="chassis/assemblage.html?currentStep=communication" id="communication-card">
             <span class="container_name">Communication</span>
-        </div>
+        </a>
 
     </div>
     
 
 </body>
-<script src="mission.js"></script>
+
+<script src="../index.js"></script>
 </html>
