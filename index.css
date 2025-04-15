@@ -107,7 +107,7 @@ body{
 
 .money_pillule{
     position: absolute;
-    top: 50px;
+    top: 150px;
     right: 50px;
     background: var(--bg-checked-container);
     border-radius: 50px;
@@ -127,11 +127,31 @@ body{
     background-color: #FFFFFF;
 }
 
+.chassis-body h1{
+    text-align: center;
+    color: #F66B0E;
+    font-size: 50pt;
+}
+
+.chassis-body button{
+    font-family: var(--main-font);
+    background-color: var(--bg-current-container);
+    color: var(--bg-color);
+    outline: none;
+    border: none;
+    padding: 20px 60px;
+    box-shadow: 5px 7px 0px 0px var(--drop-shadow-current-container);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18pt;
+}
+
 .chassis-selection-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 
 }
 
