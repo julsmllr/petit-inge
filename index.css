@@ -105,6 +105,21 @@ body{
     color: var(--font-color-checked-container);
 }
 
+.money_pillule{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background: var(--bg-checked-container);
+    border-radius: 50px;
+    padding: 20px 50px;
+    box-shadow: 5px 5px 0px 0px var(--drop-shadow-checked-container);
+    cursor: pointer;
+}
+
+.money_pillule .money_span{
+    color: var(--bg-color);
+    font-size: 28pt;
+}
 
 /* ------------ CHASSIS */
 
@@ -189,6 +204,52 @@ body{
     cursor: not-allowed;
     box-shadow: 0px 0px 0px 0px #000;
 }
+
+
+.fin_body{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.fin_body .fin_title{
+    text-transform: capitalize;
+}
+.fin_body div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F66B0E;
+    width: 550px;
+    height: 750px;
+    border-radius: 40px;
+    box-shadow: 10px 16px 0px 0px #AF4803;
+    
+}
+
+.fin_body div .info{
+    margin-top: 20px;
+    color: var(--bg-color);
+    font-size: 18pt;
+}
+
+.fin_body div .info .list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+    font-size: 28pt;
+    width: 100%;
+}
+
+.fin_body div .info .list .list_items{
+    font-weight: 600;
+}
+
+
 
 
 /* ---------- RESPONSIVE DESIGN ---------- */

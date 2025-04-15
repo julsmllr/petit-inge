@@ -16,7 +16,7 @@ let correctCards = {
 document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("assemblage.html")) {
         // Ton script ici
-        
+        document.getElementById("money-span").innerHTML = "💵 " + money + "€";
         const params = new URLSearchParams(window.location.search);
         let currentStep = params.get("currentStep");
         console.log(currentStep);
@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         
         chassisValidateBtn.addEventListener('click', () => {
+            money -= 1000;
+            localStorage.setItem("money", money);
+            document.getElementById("money-span").innerHTML = "💵 " + money + "€";
             const correctAnswers = correctCards[currentStep].map(String); 
             var nbValideCards = 0
             console.log(correctAnswers, selectedCards)
@@ -60,14 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     window.location.href = "../mission.html?validateStep="+currentStep;
                   }, 1000); 
+                console.log("money: " + money);
             }
+            
         
         });
 
     }
 
     if (window.location.pathname.includes("mission.html")) {
-
+        document.getElementById("money-span").innerHTML = "💵 " + money + "€";
+        console.log("money: " + money);
                 // Sélectionner tous les liens
         const links = document.querySelectorAll('a');
 
@@ -136,12 +142,68 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("chassis-card").classList.add("checked_container");
                 document.getElementById("securite-card").classList.add("checked_container");
                 document.getElementById("controlPanel-card").classList.add("checked_container");
+                document.getElementById("communication-card").classList.add("checked_container");
                 
+
                 document.getElementById("chassis-card").classList.add("disabled");
                 document.getElementById("moteur-card").classList.add("disabled");
                 document.getElementById("securite-card").classList.add("disabled");
                 document.getElementById("controlPanel-card").classList.add("disabled");
+                document.getElementById("communication-card").classList.add("disabled");
+                setTimeout(() => {
+                    window.location.href = "../pages/fin.html";
+                  }, 1000); 
                 break;
         }
     }
+
 });
+
+
+
+if (window.location.pathname.includes("fin.html")){
+    document.addEventListener("DOMContentLoaded", () =>{
+    console.log("fin")
+    const startTime = parseInt(localStorage.getItem("startTime"));
+    const endTime = Date.now();
+    const totalTimeMs = endTime - startTime;
+
+    const totalSeconds = Math.floor(totalTimeMs / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    console.log(minutes, seconds)
+    // Affichage dans la page
+    document.getElementById("time-span").innerHTML = minutes+"min" +seconds+"s";
+    
+    document.getElementById("money-span").innerHTML = (20000-money)+ "€";
+    // Si tu veux ensuite reset pour une nouvelle partie
+    localStorage.removeItem("startTime");
+    localStorage.removeItem("money");
+    });
+};
+
+function returnButton() {
+    const currentUrl =  new URLSearchParams(window.location.search);
+    let current = currentUrl.get("currentStep");
+    switch(current) {
+        case "chassis":
+            window.location.href = "../mission.html";
+            break;
+        case "moteur":
+            window.location.href = "../mission.html?validateStep=chassis";
+            break;
+        case "securite":    
+            window.location.href = "../mission.html?validateStep=moteur";
+            break;  
+        case "controlPanel":
+            window.location.href = "../mission.html?validateStep=securite";
+            break;
+        case "communication":   
+            window.location.href = "../mission.html?validateStep=controlPanel";
+            break;
+        case "fin":
+    }
+    
+}
+
+
