@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.classList.remove('selected');
                     selectedCards = selectedCards.filter(cardId => cardId !== id);
                     counter.textContent = `${selectedCards.length} / 3 sélectionnées`;
+                    chassisValidateBtn.disabled = true;
                 }
             });
         
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
 
         if (localStorage.getItem("money") === null) {
-            localStorage.setItem("money", 20000);
+            localStorage.setItem("money", 30000);
         }
 
         if (localStorage.getItem("startTime") === null) {

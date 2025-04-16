@@ -71,6 +71,11 @@ body{
 }
   
 
+.mission_money{
+    position: absolute;
+    right: 50px;
+}
+
 
 /* ----------- Container Status ----------- */
 .neutral_container{
@@ -111,11 +116,6 @@ body{
     padding: 20px 60px;
     box-shadow: 5px 5px 0px 0px var(--drop-shadow-checked-container);
     cursor: pointer;
-}
-
-.money_mission{
-    position: absolute;
-    right: 50px;
 }
 
 .money_pillule .money_span{
@@ -247,28 +247,39 @@ body{
 .fin_body .fin_title{
     text-transform: capitalize;
 }
-.fin_body div {
+.fin_body .fin_div {
+    background-color: #F66B0E;
+    border-radius: 40px;
+    box-shadow: 10px 16px 0px 0px #AF4803;    
+}
+
+.fin_body .fin_div .info{
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    background-color: #F66B0E;
-    width: 550px;
-    height: 750px;
-    border-radius: 40px;
-    box-shadow: 10px 16px 0px 0px #AF4803;
-    
-}
-
-.fin_body div .info{
     margin-top: 20px;
     color: var(--bg-color);
     font-size: 18pt;
+    gap: 50px;
+    padding: 50px 50px;
+}
+
+.fin_info_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.fin_info_text img{
+    width: 100px;
 }
 
 .fin_body div .info .list{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 50px;
     list-style: none;
@@ -276,9 +287,21 @@ body{
     width: 100%;
 }
 
+.fin_body div .info .stats{
+    text-decoration: underline;
+}
+
 .fin_body div .info .list .list_items{
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
 }
+
+.fin_body div .info .list .list_items span{
+    font-weight: 400;
+    color: var(--bg-color);
+}
+
 
 .landing-content {
     max-width: 800px;
@@ -391,6 +414,13 @@ body{
     box-shadow: 7px 9px 0px 0px var(--drop-shadow-checked-container);
 }
 
+.button_array{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 
 /* Écrans ≤ 1024px : taille intermédiaire */
@@ -427,6 +457,15 @@ body{
         padding: 60px 0;
     }
 
+    .money_pillule.mission_money {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+
+    .money_pillule.mission_money .money_span {
+        font-size: 14px;
+    }
+    
     .container_name {
         font-size: 24pt;
         padding: 16px 32px;
@@ -443,7 +482,7 @@ body{
     }
 
     .chassis-card-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 
@@ -484,6 +523,17 @@ body{
         padding: 15px 40px;
         font-size: 16pt;
     }
+
+    .fin_body .fin_div .info{
+        padding: 20px 20px;
+    }
+.fin_body div .info .list .list_items{
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    font-size: 16pt;
+}
+
 }
 
 /* Écrans ≤ 480px : smartphones */
@@ -492,6 +542,16 @@ body{
     .container_name {
         font-size: 18pt;
         padding: 12px 24px;
+    }
+
+    .money_pillule.mission_money {
+        font-size: 11px;
+        padding: 10px 20px;
+        right: 20px;
+    }
+
+    .money_pillule.mission_money .money_span {
+        font-size: 11px;
     }
 
     .neutral_container{
@@ -514,16 +574,17 @@ body{
         height: 30px;
         width: 3px;
     }
-
     
+
     .chassis-card-grid {
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
     }
 
     .chassis-card {
-        padding: 0 5px;
+        padding: 0 20px;
     }
     .chassis-card svg {
         width: 40px;
@@ -538,11 +599,10 @@ body{
 
     .money_pillule .money_assemblage{ 
         border-radius: 30px;
+        padding: 0 0;
     }
 
-    .money_assemblage .money_span{
-        font-size: 12pt;
-    }
+
 
     .money_span{
         font-size: 15pt;
@@ -592,5 +652,13 @@ body{
     .start-button {
         padding: 12px 30px;
         font-size: 14pt;
+    }
+
+    .fin_info_text img{
+        width: 80px;
+    }
+
+    .fin_body div .info .list .list_items{
+        font-size: 12pt;
     }
 }
