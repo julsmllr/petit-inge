@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.location.pathname.includes("pages/fin.html")){
         
-        document.getElementById("money-span").innerHTML = (20000 - localStorage.getItem("money")) + " €";
+        document.getElementById("money-span").innerHTML = (30000 - localStorage.getItem("money")) + " €";
         const startTime = parseInt(localStorage.getItem("startTime"));
         const endTime = Date.now();
         const totalTimeMs = endTime - startTime;
