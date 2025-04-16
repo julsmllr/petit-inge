@@ -50,11 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(correctAnswers, selectedCards)
             selectedCards.forEach(id => {
                 const card = document.querySelector(`[data-card-id="${id}"]`);
+    
                 if (correctAnswers.includes(id)) {
                     nbValideCards++;
-                    console.log("Correct answer + id: " + card);
                     card.classList.remove('selected');
                     card.classList.add('checked');
+                } else {
+                    card.classList.remove('selected');
+                    selectedCards = selectedCards.filter(cardId => cardId !== id);
+                    counter.textContent = `${selectedCards.length} / 3 sélectionnées`;
                 }
             });
         
@@ -62,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Bravo, vous avez sélectionné les bonnes cartes ! Cliquer sur Ok pour continuer l'aventure !");
                 setTimeout(() => {
                     window.location.href = "../mission.html?validateStep="+currentStep;
-                  }, 1000); 
+                  }, 500); 
             }
             
         
@@ -173,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalSeconds = Math.floor(totalTimeMs / 1000);
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
-        document.getElementById("time-span").innerHTML = minutes + "' " + seconds + "''";  
+        document.getElementById("time-span").innerHTML = minutes + "min " + seconds + "s ";  
     }
 
 });
@@ -203,4 +207,7 @@ function returnButton() {
     
 }
 
+
+// -------------- ANIMATED JS -------------- //
+ScrollReveal().reveal('.fin_title', { delay: 1000, duration: 1000 });
 

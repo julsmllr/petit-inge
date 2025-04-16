@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,40 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="title">Bienvenue dans le Ptit Ingé</h1>
-    <a href="pages/mission.html">Go to next page</a>
-</body>
-<script>
+    <header class="header">
+        <h1>Le P'tit Ingé</h1>
+    </header>
 
-</script>
+    <main class="landing-content">
+        <section class="rules-section">
+            <h2>Bienvenue dans Le P'tit Ingé !</h2>
+            <p class="intro-text">Découvrez le monde passionnant de l'ingénierie en assemblant votre propre <span>fusée</span>.</p>
+            
+            <div class="rules-container">
+                <h3>Règles du jeu :</h3>
+                <ul class="rules-list">
+                    <li>Vous disposez d'un budget initial de <span class="highlight">20 000€</span></li>
+                    <li>Chaque tentative d'assemblage coûte <span class="highlight">1 000€</span></li>
+                    <li>Vous devez compléter 5 étapes d'assemblage dans l'ordre :</li>
+                    <ul class="steps-list">
+                        <li>Châssis</li>
+                        <li>Moteur</li>
+                        <li>Sécurité</li>
+                        <li>Tableau de contrôle</li>
+                        <li>Communication</li>
+                    </ul>
+                    <li>À chaque étape, sélectionnez les <span class="highlight">3 bonnes pièces</span> parmi les options disponibles</li>
+                </ul>
+            </div>
+            
+            <div class="start-container">
+                <p class="start-text">Prêt à relever le défi ?</p>
+                <a href="pages/mission.html" class="start-button">Commencer l'assemblage</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</body>
 </html>
